@@ -1,4 +1,6 @@
 import './App.css'
+import NavigationBar from './component/NavigationBar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
  
@@ -6,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Hello World!!!</h1>
+        <NavigationBar/>
       </div>
       
     </>
