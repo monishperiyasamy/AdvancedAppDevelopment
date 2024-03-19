@@ -14,6 +14,13 @@ import AdminPage from './Pages/AdminPage';
 import AdminAddCoursePage from './Pages/AdminAddCoursePage';
 import AdminTable from './Pages/AdminTable';
 import StudentPage from './Pages/StudentPage';
+import AdminPayment from './Pages/AdminPayment';
+import AdminEnquiry from './Pages/AdminEnquiry';
+import UserPage from './Pages/UserPage';
+import Enquiry from './Pages/Enquiry';
+import Cart from './Pages/Cart';
+import Payment from './Pages/Payment';
+import Content1 from './Pages/Content1';
 
 function App() {
   return (
@@ -32,6 +39,14 @@ function App() {
           <Route path="/adminadd/edit" element={<AdminAddCoursePage/>}/>
           <Route path="/admintable" element={<AdminTable/>}/>
           <Route path="/student" element={<StudentPage/>}/>
+          <Route path="/adminpayment" element={<AdminPayment/>}/>
+          <Route path="/adminenquiry" element={<AdminEnquiry/>}/>
+          <Route path="/user" element={<UserPage/>}/>
+          <Route path="/enquiry" element={<Enquiry/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/userpay" element={<Payment/>}/>
+          <Route path="/content1" element={<Content1/>}/>
+          
           
 
         </Routes>
