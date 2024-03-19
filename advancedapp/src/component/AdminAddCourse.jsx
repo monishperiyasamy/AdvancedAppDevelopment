@@ -14,9 +14,13 @@ function AdminAddCourse() {
   };
 
   return (
+    <div className='adminaddedit'>
     <div className='add-aform'>
     <form onSubmit={handleSubmit}>
+    
       <h2>Course Details</h2>
+      <h2></h2>
+      <h2></h2>
       <div className="form-group">
         <label htmlFor="courseName">Course Name:</label>
         <input
@@ -58,6 +62,7 @@ function AdminAddCourse() {
       </div>
       <button className='admin-abutton' type="submit">Confirm</button>
     </form>
+    </div>
     </div>
   );
 }

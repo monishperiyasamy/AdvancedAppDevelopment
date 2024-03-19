@@ -79,7 +79,7 @@ function Register() {
         if (!hasError) {
             setLoad(true)
              
-            navigate('/admin')
+            navigate('/login')
             console.log("Registration successful!");
         }
         setErrors(error);

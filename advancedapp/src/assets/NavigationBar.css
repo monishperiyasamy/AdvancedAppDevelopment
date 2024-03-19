@@ -1,10 +1,9 @@
-
 .container {
   width: 100%;
   margin: 0;
   padding: 0;
-  box-shadow: 0 0 10px #549ad8;
-  border: 2px solid #549ad8;
+  /* box-shadow: 0 0 10px #549ad8;
+  border: 2px solid #549ad8; */
   margin-top:-0.5%;
  
 }
@@ -13,7 +12,8 @@ header {
   width: 100%;
   margin: 0;
   padding: 10px 0; 
- 
+   box-shadow: 0 0 10px #549ad8;
+  border: 2px solid #549ad8;
   position: fixed; 
   top: 0; 
   left: 0;
@@ -164,5 +164,5 @@ header {
 
 .logo-container img {
   width: 100px;
-  margin-left: 6%;
+  margin-left:6%;
 }

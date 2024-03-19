@@ -1,0 +1,38 @@
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    box-shadow: 0 0 10px #549ad8;
+  border: 1px solid #549ad8;
+    color: #160101;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 88PX;
+  }
+  
+  .sidebar-header {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menuItem {
+    display: block;
+    padding: 29px 15px;
+    text-decoration: none;
+    color: #200101;
+
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-menuItem:hover {
+    background-color: #555;
+  }
+  

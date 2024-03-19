@@ -1,9 +1,11 @@
 footer {
     position: fixed;
-    bottom: 0;
-    width: 96.9%;
+    bottom: 0.5%;
+    width: 98.9%;
     padding: 0.5em;
-    left:-0.1%
+    left:-0.1%;
+    box-shadow: 0 0 10px #549ad8;
+    border: 2px solid #549ad8;
   }
   
   .container-flex {
@@ -35,5 +37,6 @@ footer {
   .copyright {
     text-align: right;
     font-size: large;
+    margin-right: 2%;
   }
   

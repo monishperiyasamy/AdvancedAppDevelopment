@@ -8,7 +8,7 @@ function NavigationBar() {
 
   return (
     <header>
-      <div className='container container-flex'>
+      <div className='n-container container-flex'>
         <div className='logo-container'>
           <h1><img src="https://logodix.com/logo/1737108.png" alt="Logo" /></h1>
         </div>

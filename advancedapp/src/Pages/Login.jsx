@@ -68,8 +68,8 @@ function Login() {
                 console.log("Login successful!");
                 navigate('/admin');
             } else {
-                console.log("Login not successful!");
-                // Handle regular user login
+                navigate('/user');
+                
             }
         }
         setErrors(error);

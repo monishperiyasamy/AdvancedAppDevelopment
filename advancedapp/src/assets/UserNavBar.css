@@ -1,0 +1,54 @@
+.navbar {
+    overflow: hidden;
+    background-color:none;
+    position:absolute;
+    top: 0.5%;
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px #549ad8;
+    border: 2px solid #549ad8;
+    margin-left: -12%;
+  
+  }
+  .search-section
+  {
+    /* border: 2px solid #549ad8; */
+    
+  }
+  
+  .navbar a {
+    color:black;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+  }
+  
+  .logo {
+    height: 55px;
+    margin-left: 45px;
+  }
+  
+  .search-bar {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 300px;
+    margin-right: 200px; /* Adjust the margin as needed */
+  }
+  .right-section {
+    display: flex;
+    margin-right: 3%;
+  }
+  
+  .right-section a {
+    margin-left: 10px;
+  }
+  
+  /* Change background on mouse-over */
+  .navbar a:hover {
+    color:#007bff;
+  
+  }
+  
