@@ -1,0 +1,44 @@
+/* AdminTable.css */
+
+.course-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15%;
+    font-size: large;
+  }
+  
+  .course-table th,
+  .course-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .course-table th {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .course-table__action-button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 4% auto;
+    display: block;
+    width: 120px;
+    text-align: center; 
+  }
+  
+  .edit {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 5px;
+    font-size: large;
+  }
+  
+  .delete {
+    background-color: red;
+    color: white;
+    padding: 9px 10px; 
+    font-size: large;
+  }
+  

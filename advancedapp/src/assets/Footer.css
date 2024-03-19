@@ -1,0 +1,39 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 96.9%;
+    padding: 0.5em;
+    left:-0.1%
+  }
+  
+  .container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icons {
+    display: flex;
+    font-size: 1.3em;
+  }
+  
+  .line {
+    width: 30%;
+    text-align: center; 
+     
+  }
+  
+  .line hr {
+    margin: 0; 
+  }
+  
+  .f-icon {
+    margin-right: 1em;
+    font-size: 1.3em;
+  }
+  
+  .copyright {
+    text-align: right;
+    font-size: large;
+  }
+  

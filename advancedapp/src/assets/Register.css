@@ -1,0 +1,115 @@
+/*the entire register container*/
+.register-block .container {
+  max-width: 600px;
+  margin-top: 6%;
+  margin-left: 25%;
+  
+}
+
+.register-sec {
+  background:rgb(239, 239, 239);
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #549ad8;
+  border: 1px solid  #549ad8;
+}
+
+.register-sec h2 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.register-form .form-group {
+  margin-bottom: 20px;
+  
+  
+}
+
+/* name,password,email*/
+.register-form label {
+  font-size: 17px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: left;font-style:inherit;
+ 
+}
+
+/* text box*/
+.register-form .form-control {
+
+margin: auto;
+height: 20px;
+width: 90%;
+border-radius: 6px;
+border: 1px solid #d5d3d3;
+padding: 10px;
+font-size: 14px;
+
+}
+
+.register-form .text-danger {
+  color: #dc3545;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+/* register button*/
+.register{
+  background: #428bca;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.register-form .form-group .text-center {
+  text-align: center;
+  margin-top: 20px;
+  
+}
+   /* register text*/
+.text-center-register {
+    font-size: 34px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 20px; 
+ }
+      
+ /* line below register text*/
+.text-center-register::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 3px;
+    background-color: #007bff;
+    position: absolute; 
+    bottom: -10px;
+    left: 45%;
+}
+/* Eye icon */
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  
+  right: 50px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper input {
+ 
+  padding-right: 40px; 
+}
+
+      

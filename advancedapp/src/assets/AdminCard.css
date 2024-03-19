@@ -1,0 +1,93 @@
+.aa1card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 5px;
+    margin-top: 19%;
+    margin-left: -10%;
+  }
+  
+  .aa1card:hover {
+    box-shadow: 0 8px 16px 0 black;
+  }
+  
+  .aa1im {
+    border-radius: 5px 5px 0 0;
+    width:100%;
+  }
+  
+  .aa1contain {
+    padding: 2px 18px;
+  }
+.viewbut
+  {
+    border: none;
+    outline: none;
+    background-color: rgb(254, 113, 108);
+    color:#fff;
+    padding:.5em 1em;
+}
+
+.aa2card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 5px;
+    margin-top: -22%;
+    margin-left: 22%;
+  }
+  
+  .aa2card:hover {
+    box-shadow: 0 8px 16px 0 black;
+  }
+  
+  .aa2im {
+    border-radius: 5px 5px 0 0;
+    width:100%;
+  }
+  
+  .aa2contain {
+    padding: 2px 18px;
+  }
+  .aa3card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 5px;
+    margin-top:-22%;
+    margin-left:56%;
+  }
+  
+  .aa3card:hover {
+    box-shadow: 0 8px 16px 0 black;
+  }
+  
+  .aa3im {
+    border-radius: 5px 5px 0 0;
+    width:100%;
+  }
+  
+  .aa3contain {
+    padding: 2px 18px;
+  }
+  .aa4card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    border-radius: 5px;
+    margin-top: -22%;
+    margin-left: 88%;
+  }
+  
+  .aa4card:hover {
+    box-shadow: 0 8px 16px 0 black;
+  }
+  
+  .aa4im {
+    border-radius: 5px 5px 0 0;
+    width:100%;
+  }
+  
+  .aa4contain {
+    padding:2px 18px;
+}
