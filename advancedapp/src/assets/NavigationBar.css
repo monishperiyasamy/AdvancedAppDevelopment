@@ -5,6 +5,7 @@
   /* box-shadow: 0 0 10px #549ad8;
   border: 2px solid #549ad8; */
   margin-top:-0.5%;
+  
  
 }
 
@@ -19,6 +20,7 @@ header {
   left: 0;
   z-index: 1000;
   height: 60px; 
+  
 }
 
 .container-flex {
