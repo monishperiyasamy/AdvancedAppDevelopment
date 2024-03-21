@@ -10,16 +10,18 @@
 }
 
 header {
-  width: 100%;
+  width: 131%;
   margin: 0;
   padding: 10px 0; 
-   box-shadow: 0 0 10px #549ad8;
-  border: 2px solid #549ad8;
-  position: fixed; 
+   /* box-shadow: 0 0 10px #549ad8; */
+  border: 1px solid grey;
+  font-weight: bold;
   top: 0; 
   left: 0;
   z-index: 1000;
   height: 60px; 
+  margin-left: -15.6%;
+  margin-top: -2.8%;
   
 }
 
