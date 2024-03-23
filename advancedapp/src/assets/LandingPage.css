@@ -3,15 +3,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  width: 110%;
+  margin-top: 2%;
+ background-color: #d6eaea;
+ margin-left: -4%;
 }
 
 /* Styles for content box */
 .contentBox {
   width: 40%;
-  margin-left: -10%;
-  margin-top: -15%;
-  /* font-family: "Poppins", sans-serif;
-    color: #333; */
+  /* Adjusted margin-left to move the content box to the left */
+  margin-left: -11%;
+  margin-top: 4%;
 }
 
 .contentBox h1 {
@@ -20,7 +23,7 @@
 }
 
 .contentBox p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.9;
   font-weight: 400;
 }
@@ -42,66 +45,71 @@
   background-color: #0056b3;
 }
 
+/* image container*/
+.landing-img {
+  width: 59%; /* Adjusted width of the image */
+  border-radius: 2%;
+  margin-left: 0%;
+}
+
+
+.landing-img:hover {
+  transform: scale(1.05); 
+}
+
 /* Styles for the image container */
 .imageContainer {
   width: 100%; /* Adjust width as needed */
   border-radius: 10px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   margin-right: 90%;
-
 }
 
 /* Styles for the image */
 .imageContainer img {
-  
   margin-right: 90%;
-}
-
-/* Hover effect on image */
-.imageContainer:hover img {
-  transform: scale(1.05); /* Scale up the image on hover */
 }
 
 /* Other styles remain unchanged */
 
-.card {
+.landing-card {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  height: 60%;
+  height: 100%;
+  width: 90%;
   position: relative;
-  margin-right: 10%;
+  margin-left: 18%;
 }
 
-.card:hover {
+.landing-card:hover {
   transform: scale(1.05);
 }
 
-.card img {
+.landing-card img {
   width: 40%;
   height: auto;
 }
 
-.cardContent {
+.landing-cardContent {
   padding: 15px;
   margin: 10px;
   height: 70%;
 }
 
-.cardContent h2 {
+.landing-cardContent h2 {
   margin-top: 0;
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
 
-.cardContent p {
+.landing-cardContent p {
   font-size: 1rem;
   line-height: 1.4;
 }
 
-.cardContent .readMore {
+.landing-cardContent .readMore {
   text-decoration: none;
   background-color: #007bff;
   color: #fff;
@@ -110,86 +118,67 @@
   transition: background-color 0.3s ease;
 }
 
-.cardContent .readMore:hover {
+.landing-cardContent .readMore:hover {
   background-color: #0056b3;
 }
 
-/* Styles for slider */
-.slider {
-  width: 50%;
-  max-width: 100%;
-  margin-top: 90px;
-  overflow: hidden;
-  position: relative;
-  height: 60%;
-}
-
-.slides {
+.services .cards-landing {
   display: flex;
-  transition: transform 0.5s ease;
-  height: 60%;
+  margin-left: -10%;
+  
 }
 
-.slide {
-  min-width: 100%;
-}
-
-.slide img {
-  width: 100%;
-  height: 60%;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  z-index: 1;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-
-.services .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-right: 0%;
-}
-
-.services .card {
+.services .card-landing {
   flex: 0 0 calc(33.33% - 20px);
-  box-shadow: 0 0 10px #549ad8;
-  border: 1px solid #549ad8;
+  /* box-shadow: 0 0 10px #549ad8; */
+  border: 1px solid grey;
   background: #fff;
   padding: 40px 10px;
   list-style: none;
   border-radius: 7px;
+  ;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
   margin-bottom: 20px;
-  margin-left: 0%;
+  margin-right: 70px;
+
 }
 
-.services .card img {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 20px;
-  border-radius: 100%;
+.services .card-landing:last-child {
+  margin-right: 0;
+}
+
+.services .card-landing img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 7px 7px 0 0; 
   object-fit: cover;
 }
 
-.cards .card p {
+.cards-landing .card-landing p {
   padding: 0 15px;
   margin-top: 5px;
+}
+.explore-course
+{
+
+  margin-left:-112%;
+  font-size: 1.1rem;
+}
+p{
+  font-size:1.2rem;;
+}
+.landing-viewmore
+{
+  margin-bottom:5% ;
+  margin-left:91%;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.landing-viewmore:hover
+{
+  background-color: #0056b3;
 }
