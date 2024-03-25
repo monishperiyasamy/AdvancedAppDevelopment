@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="user_details")
+@Table(name="admin_details")
 
-public class UserModel {
+public class AdminModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

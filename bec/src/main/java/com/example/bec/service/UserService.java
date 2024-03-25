@@ -1,4 +1,4 @@
-package com.example.bec.service;
+package com.example.bec.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import io.micrometer.common.lang.NonNull;
 
-import com.example.bec.dto.UserDto;
-import com.example.bec.model.UserModel;
-import com.example.bec.repository.Userrepo;
+import com.example.bec.Dto.UserDto;
+import com.example.bec.Model.UserModel;
+import com.example.bec.Repository.Userrepo;
 
 @Service
 public class UserService {
@@ -28,13 +28,19 @@ public class UserService {
     {
         return userrepo.findAll();
     }
+
+    //retive_userById
+    public Optional<UserModel> findById(Long id)
+    {
+        return userrepo.findById(id);
+    }
     //retrive_userByEmail
     public Optional<UserModel> findByEmail(String email)
     {
         return userrepo.findByEmail(email);
     }
     //Update_userDetails(only the fields given in dto)
-    public UserModel updateuserDetails(@NonNull String email, UserModel updatedUser)
+    public UserModel updateuserDetails(@NonNull String email, UserDto updatedUser)
     {
         return userrepo.findByEmail(email)
              .map(e->{
@@ -45,6 +51,11 @@ public class UserService {
              })
              .orElseThrow(()-> new RuntimeException("User not found"));
     }
+    //deleteuser 
+    public void deleteuser(@NonNull Long id){
+            userrepo.deleteById(id);
+    }
+    
 
     
 }
