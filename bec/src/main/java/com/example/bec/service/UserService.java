@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import io.micrometer.common.lang.NonNull;
 
@@ -16,10 +17,12 @@ public class UserService {
 
     @Autowired 
     public Userrepo userrepo;
+    @Autowired
+    private PasswordEncoder pass;
 
     //signup_user
     public  UserModel createUser(@NonNull UserModel user)
-    {
+    {     user.setPassword(pass.encode(user.getPassword()));
           return userrepo.save(user);
 
     }

@@ -4,6 +4,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bec.Model.AdminModel;
@@ -32,17 +33,18 @@ public class AdminController {
     @Autowired
     public AdminService AdminService;
 
-    
     @PostMapping("/addAdmin")
+  
     public AdminModel createAdminModel(@RequestBody AdminModel Admin) {
         return AdminService.createadmin(Admin);
         }
-
-      @GetMapping("/getAll")
+        @GetMapping("/getAll")
+        @PreAuthorize("hasAuthority('ADMIN')")
     public List<AdminModel> getAll() {
         return AdminService.getAlladmin();
     }
-    @GetMapping("/getAdminbyId")
+    @GetMapping("/getAdminbyId/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Optional<AdminModel> getAdminById(Long id)
     {
         return AdminService.findById(id);
@@ -52,17 +54,20 @@ public class AdminController {
     }
     
     @GetMapping("/getAdminbyemail/{email}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<AdminModel> getAdminByEmail(@PathVariable String email) {
         Optional<AdminModel> AdminModel = AdminService.findByEmail(email);
         return AdminModel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
     @PutMapping("updateAdmin/{email}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<AdminModel> updateAdmin(@NonNull @PathVariable String email,
             @RequestBody AdminDto AdminDto) {
         AdminModel updated = AdminService.updateadminDetails(email, AdminDto);
         return new ResponseEntity<>(updated, HttpStatus.OK);
     }
     @DeleteMapping("deleteAdmin/{AdminId}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Void> removeAdmin(@NonNull @PathVariable Long AdminId) {
         AdminService.deleteadmin(AdminId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

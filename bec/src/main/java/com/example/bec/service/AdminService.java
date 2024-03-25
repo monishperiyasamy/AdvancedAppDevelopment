@@ -2,6 +2,7 @@ package com.example.bec.Service;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import io.micrometer.common.lang.NonNull;
 import com.example.bec.Dto.AdminDto;
@@ -15,9 +16,13 @@ public class AdminService {
     @Autowired 
     public Adminrepo adminrepo;
 
+     @Autowired
+    private PasswordEncoder pass;
+
     //signup_admin
     public  AdminModel createadmin(@NonNull AdminModel admin)
-    {
+    {   
+        admin.setPassword(pass.encode(admin.getPassword()));
           return adminrepo.save(admin);
 
     }

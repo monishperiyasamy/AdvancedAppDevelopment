@@ -3,6 +3,7 @@ package com.example.bec.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.bec.Dto.PaymentDto;
@@ -21,6 +22,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/makePayment")
+    @PreAuthorize("hasAuthority('USER')")
     public ResponseEntity<PaymentModel> makePayment(@RequestBody PaymentDto paymentDto) {
         if (paymentDto.getModeOfPayment() == null || paymentDto.getModeOfPayment().isEmpty()) {
             return ResponseEntity.badRequest().build();
@@ -40,6 +42,7 @@ public class PaymentController {
     }
 
     @GetMapping("/getAllPayments")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<List<PaymentModel>> getAllPayments() {
         List<PaymentModel> payments = paymentService.getAllPayments();
         return ResponseEntity.ok(payments);

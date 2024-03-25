@@ -1,19 +1,41 @@
-// @Configuration
-// @RequiredArgs
+package com.example.bec.Configuration;
 
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
-// userdetailsservice
+import lombok.RequiredArgsConstructor;
 
-// UserDetailsService (predefined class) --> loadbyusername 
-// @Override
-// public Userdetails
+@Configuration
+@RequiredArgsConstructor
+public class ApplicationConfiguration {
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UsersDetailsService();
+    }
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
+    @Bean
+    public AuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
+    }
 
-// UserDetails (predefined) --> (to give authority and access based on roles)
-//    GrantedAutority --> it defines whether the user based on role 
-
-
-
-// AuthenticationProvider ( which needs ->)(dao authentiaction provider needs UserDetailsService)
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
+}

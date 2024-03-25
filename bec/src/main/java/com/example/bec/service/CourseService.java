@@ -21,7 +21,7 @@ public class CourseService {
     }
     //getCourse_Byname
     public Optional<CourseModel> getCourseByName(String courseName) {
-        return courserepo.findByName(courseName);
+        return courserepo.findByCoursename(courseName);
     }
     // get_AllCourses
     public List<CourseModel> getAll() {
@@ -29,7 +29,7 @@ public class CourseService {
     }
      // updateCourse
      public CourseModel updateCourse(@NonNull String courseName, CourseDto courseUpdate) {
-        return courserepo.findByName(courseName)
+        return courserepo.findByCoursename(courseName)
                 .map(m-> {
                     m.setDuration(courseUpdate.getDuration());
                     m.setCost(courseUpdate.getCost());
@@ -40,7 +40,7 @@ public class CourseService {
 
    //delete_CourseByName
     public void deleteCourseByName(@NonNull String courseName) {
-        courserepo.deleteByName(courseName);
+        courserepo.deleteByCoursename(courseName);
     }
     //delete_CourseById
     public void deleteCourseById(@NonNull Long courseId) {

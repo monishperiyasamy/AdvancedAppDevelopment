@@ -4,6 +4,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bec.Model.UserModel;
@@ -32,16 +33,13 @@ public class UserController {
     public UserService userservice;
 
     
-    @PostMapping("/adduser")
-    public UserModel createUserModel(@RequestBody UserModel user) {
-        return userservice.createUser(user);
-        }
-
-      @GetMapping("/getAll")
+        @GetMapping("/getAll")
+        @PreAuthorize("hasAuthority('USER')")
     public List<UserModel> getAll() {
         return userservice.getAllUser();
     }
     @GetMapping("/getuserbyId")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Optional<UserModel> getUserById(Long id)
     {
         return userservice.findById(id);
@@ -51,23 +49,24 @@ public class UserController {
     }
     
     @GetMapping("/getuserbyemail/{email}")
+    @PreAuthorize("hasAuthority('ADMIN','USER')")
     public ResponseEntity<UserModel> getUserByEmail(@PathVariable String email) {
         Optional<UserModel> UserModel = userservice.findByEmail(email);
         return UserModel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @PutMapping("updateUser/{email}")
+    @PutMapping("/updateUser/{email}")
+    @PreAuthorize("hasAuthority('USER')")
     public ResponseEntity<UserModel> updateUser(@NonNull @PathVariable String email,
             @RequestBody UserDto userDto) {
         UserModel updated = userservice.updateuserDetails(email, userDto);
         return new ResponseEntity<>(updated, HttpStatus.OK);
     }
-    @DeleteMapping("deleteUser/{userId}")
+    @DeleteMapping("/deleteUser/{userId}")
+    @PreAuthorize("hasAuthority('USER')")
     public ResponseEntity<Void> removeUser(@NonNull @PathVariable Long userId) {
         userservice.deleteuser(userId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 }
-
-
 }
 
 

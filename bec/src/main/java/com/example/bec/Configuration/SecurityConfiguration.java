@@ -1,41 +1,43 @@
-// @Configuration
-// // to access functionality of web application security
-// @EnableWebSecurity 
-// @EnableMethodSecurity
+package com.example.bec.Configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-// //dependency's  -->spring boot starter security ( can't access any page without autheticate -> automatically redirect to login form)
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-// // JWT (jjwt) [3 dependency]-> encrypted method (to set time limit for user in application for login ( header ( token active,expires time), payload(user's data) , encryption algo( has based algorithm)))
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class SecurityConfiguration {
 
-// //open api starter (for swagger)
+        @Autowired
+        private AuthenticationFilter authenticationFilter;
 
-// //postergres dependency
-// public class SecurityConfiguration
-// {
-  
-//     @Bean 
-//   public  SecurityFilterChain sfc (HttpSecurity http) throws Exception{// all security implementation
-//  {
-//     return http
-//               .csrf(AbstractHttpConfig::disable)// cross site request forgery --> provide authentication
-//               .authorizeHttpRequest(
-//                  req->req.requestMatches(...patterns: "/createUser", "/home"). permitAll())// disabling csrf for creating account
+        @Autowired
+        private AuthenticationProvider authenticationProvider;
 
-//                  .authorizeHttpRequest(
-//                     req->req.requestMatches(...patterns:"/user/**", "/")
-//                     .autheticated()
-//                  )
-
-//                  //session management
-
-            
-                 
-//               )
-//  }
-
-
-
-
-
-// }
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+                return httpSecurity
+                                .csrf(AbstractHttpConfigurer::disable)
+                                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers( "/auth/**","/v3/api-docs/**",
+                                "/swagger-ui.html", "/swagger-ui/**","/course/**")
+                        .permitAll())
+                .authorizeHttpRequests(requests -> requests.requestMatchers("/user/**")
+                        .authenticated())
+                                .sessionManagement(session -> session
+                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                                .authenticationProvider(authenticationProvider)
+                                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                                .build();
+        }
+}
